@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "src/main.cpp",
+        "src/apple/apple.cpp",
+        "src/snake/snake.cpp",
+        "src/graphics/graphics.cpp",
+        "src/game/game.cpp",
+        "-o",
+        "snakeGame.exe",
+        "-lfreeglut",
+        "-lopengl32",
+        "-lgdi32"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

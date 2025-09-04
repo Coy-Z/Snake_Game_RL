@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run FreeGLUT App",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/main${exeExt}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+    }
+  ]
+}
