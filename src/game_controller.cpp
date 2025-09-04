@@ -7,7 +7,7 @@
 
 namespace SnakeGame {
 
-Game::Game() 
+Game::Game() // Member initialization list since we can't assign to references.
     : snake_(std::make_unique<Snake>())
     , apple_(std::make_unique<Apple>())
     , graphics_(nullptr)
@@ -118,7 +118,7 @@ std::vector<double> Game::getStateVector() const {
         state.push_back(static_cast<int>(current_direction_) == i ? 1.0 : 0.0);
     }
     
-    // Distance to walls (normalized)
+    // Distance to walls (normalized) - Need to double check this
     state.push_back(static_cast<double>(head[0] + GameConfig::GRID_SIZE_X/2) / GameConfig::GRID_SIZE_X); // left wall
     state.push_back(static_cast<double>(GameConfig::GRID_SIZE_X/2 - head[0]) / GameConfig::GRID_SIZE_X); // right wall
     state.push_back(static_cast<double>(head[1] + GameConfig::GRID_SIZE_Y/2) / GameConfig::GRID_SIZE_Y); // bottom wall
@@ -162,7 +162,7 @@ bool Game::performAction(Direction action) {
     return current_state_ == GameStateType::PLAYING;
 }
 
-void Game::registerRewardCallback(std::function<void(double)> callback) {
+void Game::registerRewardCallback(std::function<void(double)> callback) { // callback function must return void and take one double param
     reward_callback_ = callback;
 }
 
@@ -261,5 +261,4 @@ void Game::updateGameLogic() {
         }
     }
 }
-
 } // namespace SnakeGame

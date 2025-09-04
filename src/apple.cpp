@@ -39,7 +39,7 @@ void Apple::reset() {
     position_ = {GameConfig::GRID_SIZE_X / 2 - 1, GameConfig::GRID_SIZE_Y / 2 - 1};
 }
 
-std::optional<Position> Apple::findRandomValidPosition(const PositionSet& forbidden_positions) const {
+std::optional<Position> Apple::findRandomValidPosition(const PositionSet& forbidden_positions) const { // Need to double check this
     // Create a vector of all possible positions
     std::vector<Position> all_positions;
     
@@ -61,7 +61,7 @@ std::optional<Position> Apple::findRandomValidPosition(const PositionSet& forbid
     return all_positions[dist(gen_)];
 }
 
-bool Apple::isValidApplePosition(const Position& pos, const PositionSet& forbidden_positions) const {
+bool Apple::isValidApplePosition(const Position& pos, const PositionSet& forbidden_positions) const { // Need to double check this
     // Check if position is within bounds
     if (pos.size() < 2) {
         return false;

@@ -75,7 +75,7 @@ private:
     Direction current_direction_;
     double last_reward_;
     
-    // RL callback
+    // RL callback - function pointer
     std::function<void(double)> reward_callback_;
     
     // Internal helper methods

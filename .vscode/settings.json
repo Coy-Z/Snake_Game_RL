@@ -1,6 +1,15 @@
 {
     "files.associations": {
         "deque": "cpp",
-        "string": "cpp"
-    }
+        "string": "cpp",
+        "xstring": "cpp",
+        "vector": "cpp",
+        "optional": "cpp"
+    },
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.compilerPath": "g++",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/packages/freeglut.3.0.0.v140.1.0.2/sources"
+    ]
 }

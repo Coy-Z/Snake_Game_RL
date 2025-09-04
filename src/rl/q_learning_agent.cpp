@@ -1,4 +1,4 @@
-#include "../include/rl/q_learning_agent.h"
+#include "rl/q_learning_agent.h"
 #include <algorithm>
 #include <fstream>
 #include <iostream>

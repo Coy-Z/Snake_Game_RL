@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../rl_interface.h"
+#include "rl_interface.h"
 #include <map>
 #include <random>
 

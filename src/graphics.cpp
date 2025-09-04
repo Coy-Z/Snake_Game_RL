@@ -5,9 +5,9 @@
 #include <sstream>
 
 #ifdef __APPLE__
-#include<GLUT/glut.h>
+#include <GLUT/glut.h>
 #else
-#include "../packages/freeglut.3.0.0.v140.1.0.2/sources/GL/glut.h"
+#include <GL/glut.h>
 #endif
 
 namespace SnakeGame {
@@ -72,13 +72,13 @@ void OpenGLGraphics::drawScore(unsigned int score, unsigned int high_score) {
 }
 
 void OpenGLGraphics::drawGameOver() {
-    drawText(-0.2, 0.0, "GAME OVER", GLUT_BITMAP_HELVETICA_18);
+    drawText(-0.3, 0.0, "GAME OVER", GLUT_BITMAP_HELVETICA_18);
     drawText(-0.3, -0.1, "Press R to restart", GLUT_BITMAP_HELVETICA_12);
 }
 
 void OpenGLGraphics::drawPaused() {
-    drawText(-0.1, 0.0, "PAUSED", GLUT_BITMAP_HELVETICA_18);
-    drawText(-0.2, -0.1, "Press P to continue", GLUT_BITMAP_HELVETICA_12);
+    drawText(-0.3, 0.0, "PAUSED", GLUT_BITMAP_HELVETICA_18);
+    drawText(-0.3, -0.1, "Press P to continue", GLUT_BITMAP_HELVETICA_12);
 }
 
 void OpenGLGraphics::drawHelp() {
@@ -86,8 +86,9 @@ void OpenGLGraphics::drawHelp() {
     drawText(-0.3, 0.1, "Arrow Keys or WASD: Move", GLUT_BITMAP_HELVETICA_12);
     drawText(-0.3, 0.0, "P: Pause/Unpause", GLUT_BITMAP_HELVETICA_12);
     drawText(-0.3, -0.1, "R: Restart", GLUT_BITMAP_HELVETICA_12);
-    drawText(-0.3, -0.2, "ESC: Quit", GLUT_BITMAP_HELVETICA_12);
-    drawText(-0.3, -0.4, "Press any key to continue", GLUT_BITMAP_HELVETICA_12);
+    drawText(-0.3, -0.3, "H: Help", GLUT_BITMAP_HELVETICA_12);
+    drawText(-0.3, -0.5, "ESC: Quit", GLUT_BITMAP_HELVETICA_12);
+    drawText(-0.3, -0.7, "Press any key to continue", GLUT_BITMAP_HELVETICA_12);
 }
 
 void OpenGLGraphics::setWindowTitle(const std::string& title) {

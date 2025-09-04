@@ -102,7 +102,7 @@ const PositionDeque& Snake::getAllPositions() const {
     return body_positions_;
 }
 
-PositionSet Snake::getAvailablePositions() const {
+PositionSet Snake::getAvailablePositions() const { // Need to double check this
     PositionSet available;
     
     // Generate all possible positions on the grid
@@ -126,7 +126,7 @@ PositionSet Snake::getOccupiedPositions() const {
     return occupied;
 }
 
-bool Snake::isValidPosition(const Position& pos) {
+bool Snake::isValidPosition(const Position& pos) { // Need to double check this.
     return pos.size() >= 2 &&
            pos[0] >= -GameConfig::GRID_SIZE_X / 2 && pos[0] < GameConfig::GRID_SIZE_X / 2 &&
            pos[1] >= -GameConfig::GRID_SIZE_Y / 2 && pos[1] < GameConfig::GRID_SIZE_Y / 2;
@@ -157,7 +157,7 @@ Position Snake::wrapPosition(const Position& pos) {
 }
 
 Position Snake::calculateNextPosition(const Position& current, Direction dir) const {
-    if (current.size() < 2) {
+    if (current.size() < 2) { // Not sure about this. I think this is wrong.
         return current;
     }
     

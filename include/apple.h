@@ -31,6 +31,8 @@ public:
     
 private:
     Position position_;
+
+    // Random number generation
     mutable std::random_device rd_;
     mutable std::mt19937 gen_;
     
@@ -38,7 +40,7 @@ private:
     std::optional<Position> findRandomValidPosition(const PositionSet& forbidden_positions) const;
     bool isValidApplePosition(const Position& pos, const PositionSet& forbidden_positions) const;
     
-    // Copy constructor and assignment operator
+    // Copy constructor and assignment operator - Deleted since the apple is unique, and copying makes no sense
     Apple(const Apple&) = delete;
     Apple& operator=(const Apple&) = delete;
     

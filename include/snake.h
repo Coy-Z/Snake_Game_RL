@@ -1,8 +1,6 @@
 #pragma once
 
 #include "common_types.h"
-#include <deque>
-#include <set>
 #include <optional>
 
 namespace SnakeGame {

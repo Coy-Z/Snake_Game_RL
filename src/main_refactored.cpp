@@ -62,7 +62,15 @@ void keyboard(unsigned char key, int x, int y) {
         case 'P':
             if (g_game->getState() == GameStateType::PLAYING) {
                 g_game->setState(GameStateType::PAUSED);
-            } else if (g_game->getState() == GameStateType::PAUSED) {
+            } else if (g_game->getState() != GameStateType::PLAYING) {
+                g_game->setState(GameStateType::PLAYING);
+            }
+            break;
+        case 'h':
+        case 'H':
+            if (g_game->getState() != GameStateType::HELP_DISPLAY) {
+                g_game->setState(GameStateType::HELP_DISPLAY);
+            } else if (g_game->getState() == GameStateType::HELP_DISPLAY) {
                 g_game->setState(GameStateType::PLAYING);
             }
             break;
