@@ -7,11 +7,14 @@
       "command": "g++",
       "args": [
         "-std=c++17",
-        "src/main.cpp",
-        "src/apple/apple.cpp",
-        "src/snake/snake.cpp",
-        "src/graphics/graphics.cpp",
-        "src/game/game.cpp",
+        "src/main_refactored.cpp",
+        "src/game_controller.cpp",
+        "src/snake.cpp",
+        "src/apple.cpp",
+        "src/graphics.cpp",
+        "src/rl/rl_interface.cpp",
+        "-I",
+        "include",
         "-o",
         "snakeGame.exe",
         "-lfreeglut",
@@ -21,7 +24,60 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build and run (human)",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "src/main_refactored.cpp",
+        "src/game_controller.cpp",
+        "src/snake.cpp",
+        "src/apple.cpp",
+        "src/graphics.cpp",
+        "src/rl/rl_interface.cpp",
+        "-I",
+        "include",
+        "-o",
+        "snakeGame.exe",
+        "-lfreeglut",
+        "-lopengl32",
+        "-lgdi32",
+        "&&",
+        "./snakeGame.exe",
+        "human"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build and run (RL)",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "src/main_refactored.cpp",
+        "src/game_controller.cpp",
+        "src/snake.cpp",
+        "src/apple.cpp",
+        "src/graphics.cpp",
+        "src/rl/rl_interface.cpp",
+        "-I",
+        "include",
+        "-o",
+        "snakeGame.exe",
+        "-lfreeglut",
+        "-lopengl32",
+        "-lgdi32",
+        "&&",
+        "./snakeGame.exe",
+        "rl"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
     }
   ]
 }

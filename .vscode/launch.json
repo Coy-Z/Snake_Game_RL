@@ -2,14 +2,37 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run FreeGLUT App",
+      "name": "Debug Snake Game (Human Mode)",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/main${exeExt}",
+      "program": "${workspaceFolder}/snakeGame.exe",
+      "args": ["human"],
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
+      "externalConsole": true,
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb"
+      "miDebuggerPath": "gdb",
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "Debug Snake Game (RL Mode)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/snakeGame.exe",
+      "args": ["rl"],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "Run Snake Game (Human Mode)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/snakeGame.exe",
+      "args": ["human"],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": true
     }
   ]
 }
